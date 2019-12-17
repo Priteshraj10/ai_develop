@@ -1,0 +1,25 @@
+Zero Knowledge(chess engine)
+
+establish the search tree
+Use neural net to prune the search tree
+Definition: Value network V- f(board)
+
+State:
+
+Pieces(2-7*2-16)
+
+*Universal
+** Blank
+** Blank(En passant)
+** En passant
+** Pawn
+** Bishop
+** Knight
+** Rook
+** Rook (can castle)
+** Queen
+** King
+
+Extra state: = To move
+
+8x8x4-4 =257 bits( vector of 0 or 1)
