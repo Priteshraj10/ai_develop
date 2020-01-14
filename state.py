@@ -7,6 +7,7 @@ follow the instruction
 """
 import numpy as np
 import chess
+import torch
 from train import Net
 
 
@@ -68,4 +69,3 @@ class State(object):
 
 if __name__ == '__main__':
     s = State()
-

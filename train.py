@@ -8,7 +8,6 @@ follow the instruction
 
 import numpy as np
 import torch.nn as nn
-import torch
 import torch.nn.functional as F
 from torch import optim
 from torch.utils.data import Dataset
@@ -16,7 +15,7 @@ from torch.utils.data import Dataset
 
 class ChessValueDataset(Dataset):
     def __init__(self):
-        dat = np.load("processed/dataset_1L.npz")
+        dat = np.load("processed/dataset_1M.npz")
         print(dat.keys())
         self.X = dat['arr_0']
         self.Y = dat['arr_1']

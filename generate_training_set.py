@@ -14,11 +14,9 @@ def get_dataset(num_samples=None):
     for fn in os.listdir("data"):
         pgn = open(os.path.join("data", fn))
         while 1:
-            try:
-                game = chess.pgn.read_game(pgn)
-            except Exception:
+            game = chess.pgn.read_game(pgn)
+            if game is None:
                 break
-
             res = game.headers['Result']
 
             if res not in values:
@@ -41,5 +39,5 @@ def get_dataset(num_samples=None):
 
 
 if __name__ == '__main__':
-    X, Y = get_dataset(1000000)
-    np.savez("processed/dataset_10M.npz", X, Y)
+    X, Y = get_dataset(25000000)
+    np.savez("processed/dataset_25M.npz", X, Y)
